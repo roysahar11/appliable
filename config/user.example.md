@@ -1,7 +1,7 @@
 # User Identity
 
 - **Name**: <!-- Your Full Name — e.g., Jane Doe -->
-- **Phone**: <!-- Your phone number — e.g., +1-555-123-4567 or 0587803288 -->
+- **Phone**: <!-- Your phone number — e.g., +1-555-123-4567 or 0501234567 -->
 - **Email**: <!-- your.email@example.com -->
 - **Resume filename**: <!-- How resume files will be named — e.g., "Jane Doe" produces files like "Jane Doe - DevOps Engineer.pdf" -->
 
