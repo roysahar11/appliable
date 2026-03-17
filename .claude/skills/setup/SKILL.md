@@ -106,11 +106,28 @@ By this point, you know their target roles, locations, experience level, and pre
 
 **Search configuration** (`config/search.md`) — Derive LinkedIn keywords from target roles, geoIds from target locations, experience level filters from career stage. If they use WhatsApp job groups, help them find group IDs. Configure scraper parameters and schedule. Present the draft for confirmation.
 
-### 6. File Generation
+### 6. Integrations
+
+Check whether the user has a WhatsApp-capable skill available. Look at the skills loaded in your context for any skill that can: (a) read messages from WhatsApp group chats by group ID, and (b) send messages to a specified phone number. It doesn't have to be called "whatsapp" or be at a specific path.
+
+**If a capable skill is found:**
+- Note the skill name(s) and what each can do
+- Write the `## Integrations` section in `CLAUDE.md`:
+  - Single skill: `- **WhatsApp**: When instructed to use WhatsApp, use the /{skill-name} skill.`
+  - Separate skills: `- **WhatsApp**: When instructed to use WhatsApp, use these skills:` with sub-bullets for send and read
+- Ask the user about WhatsApp groups for job scanning (configured in `config/search.md`)
+
+**If no capable skill is found:**
+- Explain what WhatsApp enables: scanning job groups for postings + receiving notifications/reports
+- Suggest installing the [WhatsApp skill](https://github.com/roysahar11/claude-code-whatsapp) which uses WAHA (self-hosted WhatsApp API)
+- Or skip — the pipeline works without WhatsApp, just no group scanning or push notifications
+- Write: `- **WhatsApp**: not configured. Whenever instructed to use WhatsApp, skip that step.`
+
+### 7. File Generation
 
 Write all the files listed at the top of this skill. Write them incrementally as each section of the conversation is complete, rather than waiting until the end — the user sees progress and can course-correct early.
 
-### 7. Wrap-Up
+### 8. Wrap-Up
 
 Briefly summarize what was set up and suggest next steps:
 - Try `/daily-job-fetch` to run your first job scan

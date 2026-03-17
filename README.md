@@ -1,4 +1,4 @@
-# AI Job Agent
+# Claude Code Career Agent
 
 An AI-powered job search automation system built with [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It orchestrates daily job scanning, resume customization, relevance analysis, and application drafting — all managed by an AI agent that acts as your job search partner.
 
@@ -8,7 +8,7 @@ An AI-powered job search automation system built with [Claude Code](https://docs
 - **Automated relevance filtering** — AI evaluates each job against your profile and preferences
 - **Resume customization** — generates tailored resumes for each job from your base resume
 - **Batch applications** — processes multiple jobs autonomously with quality review
-- **WhatsApp notifications** — sends summaries and draft PDFs for review
+- **WhatsApp notifications** (optional) — sends summaries and draft PDFs for review
 - **LinkedIn content** — helps create posts to increase visibility
 - **Application tracking** — directory-based tracking with status files
 
@@ -21,8 +21,8 @@ The system is built as a set of **skills** (workflow instructions) and **agents*
 │                  /daily-job-fetch                │
 │              (orchestrator skill)                │
 ├─────────┬──────────┬──────────┬─────────────────┤
-│LinkedIn │ WhatsApp │ Scrapers │ Chrome Sources   │
-│ (Chrome)│  (WAHA)  │  (HTTP)  │ (AllJobs, etc.) │
+│LinkedIn │ WhatsApp  │ Scrapers │ Chrome Sources   │
+│ (Chrome)│(optional)│  (HTTP)  │ (AllJobs, etc.) │
 └────┬────┴────┬─────┴────┬────┴────────┬────────┘
      └─────────┴──────────┴─────────────┘
                      │
@@ -87,7 +87,7 @@ Built-in scrapers that run via `fetch-all.js`. Each can be individually enabled/
 - **Node.js** (v18+) — for scripts and resume rendering
 - **[Puppeteer](https://pptr.dev/)** — for HTML-to-PDF resume conversion
 - **[Claude in Chrome](https://chromewebstore.google.com/detail/claude-in-chrome/)** (optional) — browser extension for LinkedIn scraping and Chrome-based job boards
-- **[WAHA](https://waha.devlike.pro/)** (optional) — self-hosted WhatsApp API for group scanning and notifications
+- **WhatsApp skill** (optional) — for scanning job groups and receiving notifications. See [claude-code-whatsapp](https://github.com/roysahar11/claude-code-whatsapp) for a WAHA-based implementation, or use any WhatsApp skill that supports reading group chats and sending messages
 
 ## Getting Started
 
@@ -96,8 +96,8 @@ Built-in scrapers that run via `fetch-all.js`. Each can be individually enabled/
 Click **"Use this template"** on GitHub to create your own copy, then:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-job-agent.git
-cd ai-job-agent
+git clone https://github.com/YOUR_USERNAME/claude-code-career-agent.git
+cd claude-code-career-agent
 npm install
 ```
 
@@ -109,7 +109,9 @@ Open Claude Code in the project directory and run:
 /setup
 ```
 
-The agent will guide you through a conversation to build your profile, create your base resume(s), and configure job search parameters. It can import from your existing resume or LinkedIn profile to speed things up.
+The agent will guide you through a conversation to build your profile, create your base resume(s), configure job search parameters, and detect any WhatsApp integration you have installed. It can import from your existing resume or LinkedIn profile to speed things up.
+
+By default, WhatsApp integration is disabled. The `/setup` process will check if you have a WhatsApp-capable skill installed and update the `## Integrations` section in `CLAUDE.md` accordingly. Without WhatsApp, the pipeline still works — just no group scanning or push notifications. You can install WhatsApp later and re-run `/setup` to enable it.
 
 You can come back to `/setup` anytime to expand or update your profile.
 
@@ -151,7 +153,7 @@ For individual operations:
 ## File Structure
 
 ```
-ai-job-agent/
+claude-code-career-agent/
 ├── .claude/
 │   ├── agents/           # Agent definitions (specialized workers)
 │   ├── skills/           # Skill definitions (workflow instructions)
@@ -181,14 +183,14 @@ Each `config/` and `profile/` file has an `.example` template showing the expect
 
 ## How the Pipeline Works
 
-1. **Fetch** — `job-fetcher` agent collects jobs from LinkedIn (via Chrome), WhatsApp groups (via WAHA), and web scrapers (HTTP APIs/RSS)
+1. **Fetch** — `job-fetcher` agent collects jobs from LinkedIn (via Chrome), WhatsApp groups (if configured), and web scrapers (HTTP APIs/RSS)
 2. **Merge** — `merge-pipeline.js` normalizes all jobs to a standard schema, derives location cities, and deduplicates
 3. **Pre-filter** — Claude reviews job titles and removes obviously irrelevant ones
 4. **Fetch descriptions** — `job-description-fetcher` retrieves full descriptions (WebFetch first, Chrome fallback)
 5. **Scan** — `scan-jobs` agent evaluates each job against your profile, skills, and preferences
 6. **Report** — generates a structured report with relevant, discuss, and skip categories
 7. **Quick-apply** — `quick-apply-batch` agents create draft resumes for relevant jobs in parallel
-8. **Notify** — sends WhatsApp summaries with draft PDFs for review
+8. **Notify** — sends WhatsApp summaries with draft PDFs for review (if WhatsApp is configured)
 
 ## Roadmap
 

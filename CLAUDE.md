@@ -70,7 +70,7 @@ Detailed reference files (read when deeper info is needed):
 - Create custom versions per application in `/Applications/{company}/{role}-{city}/`
 
 ### Outreach
-- Use `/whatsapp` skill for messaging
+- Use `/whatsapp` skill for messaging (see Integrations section below)
 - Use `/linkedin-post-creator` for LinkedIn content
 
 ### Content & Branding
@@ -109,3 +109,10 @@ At the beginning of each interactive session (first response, or right after com
 - "Any responses or updates on existing applications?"
 
 Use the answers to update `status.md` files in the relevant `Applications/` directories. This keeps tracking current with zero extra effort.
+
+---
+
+## Integrations
+
+<!-- This section is populated by /setup. Edit manually or re-run /setup to update. -->
+- **WhatsApp**: not configured. Whenever instructed to use WhatsApp, skip that step. To set up WhatsApp, install the [WhatsApp skill](https://github.com/roysahar11/claude-code-whatsapp) and re-run `/setup`.

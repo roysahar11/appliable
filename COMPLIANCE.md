@@ -39,9 +39,9 @@ These sources do not offer public APIs. Instead of scraping them, the repository
 
 The browser automation runs at normal browsing speed with human-like pauses. It uses your own Chrome browser and your own accounts — no headless browsers, no fake accounts, no bypassing of authentication or rate-limiting mechanisms.
 
-### WhatsApp Groups (self-hosted API)
+### WhatsApp Groups (optional, self-hosted API)
 
-Job postings shared in WhatsApp groups are read via [WAHA](https://waha.devlike.pro/), a self-hosted WhatsApp Web API running on the user's own machine. This reads the user's own chat history — no third-party access is involved.
+Job postings shared in WhatsApp groups can be read via a WhatsApp skill (e.g., [claude-code-whatsapp](https://github.com/roysahar11/claude-code-whatsapp) which uses [WAHA](https://waha.devlike.pro/), a self-hosted WhatsApp Web API). This reads the user's own chat history from their own WAHA instance — no third-party access is involved. WhatsApp integration is optional; the pipeline works without it.
 
 ## Respectful Access Principles
 
