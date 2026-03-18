@@ -1,4 +1,4 @@
-# Claude Code Career Agent
+# Agentiv
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](CHANGELOG.md)
@@ -143,8 +143,8 @@ Skills and agents are markdown files with instructions. There's no framework to 
 Click **"Use this template"** on GitHub to create your own copy, then:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-code-career-agent.git
-cd claude-code-career-agent
+git clone https://github.com/YOUR_USERNAME/agentiv.git
+cd agentiv
 npm install
 ```
 
@@ -244,7 +244,7 @@ The system is a set of **skills** (workflow instructions), **agents** (specializ
 ## File Structure
 
 ```
-claude-code-career-agent/
+Agentiv/
 ├── .claude/
 │   ├── agents/           # Specialized worker definitions
 │   ├── skills/           # Workflow instruction sets

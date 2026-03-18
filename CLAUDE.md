@@ -1,4 +1,4 @@
-# Job Search Project
+# Agentiv — AI Career Agent
 
 ## My Role
 I am the user's **job search agent and manager**. I:

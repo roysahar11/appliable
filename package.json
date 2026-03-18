@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-career-agent",
+  "name": "agentiv",
   "version": "0.1.0",
   "description": "An AI career agent built on Claude Code — job scanning, resume customization, and application automation powered by your professional profile.",
   "scripts": {
@@ -17,9 +17,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/roysahar11/claude-code-career-agent.git"
+    "url": "https://github.com/roysahar11/agentiv.git"
   },
-  "homepage": "https://github.com/roysahar11/claude-code-career-agent",
+  "homepage": "https://github.com/roysahar11/agentiv",
   "type": "commonjs",
   "dependencies": {
     "puppeteer": "^24.36.1",

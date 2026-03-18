@@ -22,9 +22,9 @@ These sources provide explicit programmatic access. The repository includes Node
 
 | Source | Method | Details |
 |--------|--------|---------|
-| **Arbeitnow** | REST API | Paginated JSON endpoint (`/api/job-board-api`). Rate-limited with delays between pages. |
-| **SimplifyJobs** | GitHub raw file | Reads a publicly maintained JSON file from the [SimplifyJobs](https://github.com/SimplifyJobs/New-Grad-Positions) GitHub repository. Single HTTP request per run. |
-| **Secret Tel Aviv** | RSS feed | Standard XML/RSS feed (`/wpjobboard/xml/rss/`). Fetched at most a few times per day. |
+| **Arbeitnow** | REST API | Paginated JSON endpoint (`/api/job-board-api`). Rate-limited with delays between pages. Their API terms require attribution — a link back to [arbeitnow.com](https://www.arbeitnow.com). They reserve the right to revoke API access at any time. |
+| **SimplifyJobs** | GitHub raw file | Reads a publicly maintained JSON file from the [SimplifyJobs](https://github.com/SimplifyJobs/New-Grad-Positions) GitHub repository. Single HTTP request per run. Note: the repo has no LICENSE file (default copyright applies), and Simplify.jobs' main site ToS prohibits scraping. However, the repo is public, community-contributed, and the README encourages derivative projects. |
+| **Secret Tel Aviv** | RSS feed | Standard XML/RSS feed (`/wpjobboard/xml/rss/`). Fetched at most a few times per day. No published ToS; robots.txt permits access. |
 
 ### Browser Automation (Claude in Chrome)
 

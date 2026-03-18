@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for considering contributing to the Claude Code Career Agent! This project gets better as more people build on it — new job sources, smarter skills, better workflows.
+Thanks for considering contributing to Agentiv! This project gets better as more people build on it — new job sources, smarter skills, better workflows.
 
 ## Ways to Contribute
 
@@ -56,7 +56,7 @@ If you've been building in your private repo (created from this template) and wa
    ```markdown
    # Publish Configuration
 
-   - **Public repo path**: /path/to/your/fork/of/claude-code-career-agent
+   - **Public repo path**: /path/to/your/fork/of/agentiv
    - **Remote**: origin
    - **Branch**: main
    ```
