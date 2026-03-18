@@ -1,5 +1,10 @@
 # Claude Code Career Agent
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](CHANGELOG.md)
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 Your job search, managed by an AI agent that actually knows you.
 
 Built on [Claude Code](https://docs.anthropic.com/en/docs/claude-code), this is a set of skills, agents, and tools that turn Claude into your career partner. It builds a deep profile of your experience, skills, and goals through conversation — then uses that context across everything it does: evaluating job opportunities against your real background (not keywords), generating tailored resumes that draw from your actual experience, scanning multiple job sources daily, and drafting applications autonomously while you sleep.
