@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for considering contributing to Agentiv! This project gets better as more people build on it — new job sources, smarter skills, better workflows.
+Thanks for considering contributing to Appliable! This project gets better as more people build on it — new job sources, smarter skills, better workflows.
 
 ## Ways to Contribute
 
@@ -56,7 +56,7 @@ If you've been building in your private repo (created from this template) and wa
    ```markdown
    # Publish Configuration
 
-   - **Public repo path**: /path/to/your/fork/of/agentiv
+   - **Public repo path**: /path/to/your/fork/of/appliable
    - **Remote**: origin
    - **Branch**: main
    ```

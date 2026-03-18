@@ -1,4 +1,4 @@
-# Agentiv Changelog
+# Appliable Changelog
 
 All notable changes to this project will be documented in this file.
 
