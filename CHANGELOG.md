@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - 2026-04-05
+
+### Quality Improvements
+- **customize-resume**: Comprehensive instructions for writing better resume summaries — structured process for understanding the role's real needs and crafting a compelling, genuine pitch. Improved guidance for role title alignment, business-value framing, and highlight selection.
+- **personal-note**: Added nuances to personal note writing — addressing requirement gaps honestly, relocation context for international roles, more natural closing
+
+### Performance
+- Added `ultrathink` and max effort directives across agents — fixes a quality drop since Claude Code introduced effort settings
+
+### Tools for Contributors
+- **publish skill**: Diff-based incremental publishing — changed files are patched via git diff instead of re-sanitized from scratch, preserving approved sanitization decisions between publishes
+
 ## [0.1.1] - 2026-03-19
 
 ### Skills
