@@ -226,3 +226,5 @@ Once the user reviews the results:
 ## Evaluation Criteria
 
 Read `profile/evaluation-criteria.md` for the full set of judgment rules: experience flexibility heuristics, degree requirements, international job assessment (visa/citizenship), career strategy ("foot in door"), and ceiling rules for senior roles.
+
+ultrathink

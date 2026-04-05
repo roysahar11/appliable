@@ -174,7 +174,10 @@ Then: Fetch descriptions for jobs in /tmp/pipeline-{scope}-{DATE}.json
 
 **What it does**: Adds `description`, `fetchStatus`, `language`, and `applicantCount` fields to each entry in the pipeline JSON. Filters high-applicant jobs and non-English/Hebrew postings.
 
-**Verify** (counts only): `jq '[.[] | .fetchStatus] | group_by(.) | map({(.[0]): length}) | add' /tmp/pipeline-il-{DATE}.json`
+**Verify** (counts only — scope to ACTIVE entries since TITLE_FILTERED ones have no fetchStatus):
+```bash
+jq '[.[] | select(.status == "ACTIVE") | .fetchStatus] | group_by(.) | map({(.[0]): length}) | add' /tmp/pipeline-il-{DATE}.json
+```
 
 ### Step 3: Scan Jobs (Relevance Filtering)
 

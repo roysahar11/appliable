@@ -48,11 +48,20 @@ For each key requirement in the job posting:
 **Guidelines:**
 - Pull 3-5 most important requirements from the job posting
 - Be specific - reference actual experiences from `profile/experience.md`, not generic claims
+- Be specific about business impact — concrete outcomes read better than generic "process optimization"
+- When describing technical experience, frame the user AS the role rather than just listing what they did (e.g., "As an MLOps engineer, I continuously design and maintain architecture" > "My projects involve designing architecture")
 - This is a chance to mention relevant details that didn't fit in the resume (e.g., language fluency, specific teaching experiences, unique background)
 - If a requirement is a stretch, acknowledge it honestly while showing related experience
 - Group related requirements if needed, but avoid overly long bullet points
 
-### 3. Personal Connection (only if documented)
+### 3. Addressing Gaps (when relevant)
+
+If there's an obvious gap between requirements and the user's profile (e.g., degree requirement), address it head-on rather than ignoring it. The approach:
+- Frame what the user DOES bring (self-teaching, hands-on experience, certifications, real projects)
+- Show genuine enthusiasm and eagerness to learn
+- End with a dialogue opener: "Do you think I can be considered for this role? Or perhaps you have other roles where I can be a better fit :)" — this turns a weakness into a conversation and shows self-awareness without desperation
+
+### 4. Personal Connection (only if documented)
 
 **IMPORTANT**: Only include this section if the user has a documented genuine interest. Check `profile/preferences.md` for the user's dream industries and passion areas. If the company/industry isn't listed there, either:
 1. Skip this section entirely, OR
@@ -60,10 +69,12 @@ For each key requirement in the job posting:
 
 **Never invent enthusiasm** - even if the company sounds interesting, don't write about excitement unless it's verified. Generic-sounding enthusiasm is worse than no enthusiasm section at all.
 
-### 4. Closing
+**Relocation**: When applying to international roles, check `profile/preferences.md` for relocation preferences. If the location is a genuine target, include personal details that make it real (e.g., partner's connection to the city, documented interest in the region). Personal grounding reads more authentic than logistical statements. Mention citizenship / work authorization separately as a practical note.
+
+### 5. Closing
 
 ```
-I'm looking forward to discussing how my skills may help the company.
+I'd love to discuss how my [skills/experience] could contribute to [the company / your team].
 
 Wishing you a wonderful [time-appropriate greeting],
 [Name]

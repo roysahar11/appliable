@@ -34,6 +34,38 @@ Identify which files actually changed since the last publish so unchanged files 
 
 The manifest only tracks Product and Template source files — Protected and Ignored files are never in the manifest.
 
+### Publish modes
+
+Based on the manifest state, this publish runs in one of two modes:
+
+| Mode | When | Behavior |
+|------|------|----------|
+| **Incremental** | Manifest exists with a valid `commitRef` | Changed files are updated via diff-based patching (Steps 0.6, 1, 2) |
+| **Full** | No manifest, corrupted manifest, or first publish | All files are processed from scratch with full sanitization |
+
+In incremental mode, individual files still fall back to fresh sanitization when they have no existing public version (new files).
+
+## Step 0.6: Collect and Understand Diffs (incremental mode only)
+
+Skip this step entirely in full publish mode.
+
+Before processing any files, build a complete picture of what changed:
+
+1. For every changed Product and Template file, collect the private diff:
+   ```bash
+   git diff {commitRef}..HEAD -- "{file_path}"
+   ```
+   Use the `commitRef` from the manifest. Use sufficient context lines (default 3 is usually enough; use `-U10` if a diff feels ambiguous).
+
+2. Read all collected diffs together. Understand the full change set:
+   - What was the intent of the changes? (new feature, bug fix, refactor, content update)
+   - Do any changes reference each other across files?
+   - Are there new PII patterns introduced that will need sanitization?
+
+3. Report a brief summary: "N files changed since last publish ({commitRef}): {grouped summary of changes}"
+
+This understanding informs how changes are applied in Steps 1 and 2.
+
 ## Step 1: Copy Product Files (with Inline PII Sanitization)
 
 Walk the private repo and classify every file into one of four tiers. This is dynamic — new files are automatically discovered and classified using the tier principles below.
@@ -95,14 +127,22 @@ Agent definition files use lowercase `agent.md` in the target repo (regardless o
 ### Copy process
 
 For each Product file **not on the skip list from Step 0.5**:
+
+**Incremental mode** (manifest exists and file has a public version):
+1. Read the file's diff from Step 0.6
+2. Read the current public version of the file from the target repo
+3. Apply the equivalent sanitized change to the public version — the diff shows the raw private content that changed, and the existing public file shows how previous content was sanitized. Follow the same sanitization patterns already established in the file.
+4. Write the updated file to the target repo
+
+**Fresh sanitization** (full publish mode, OR file is new with no public version):
 1. Read the file from the private repo
-2. Apply sanitization (contextual, not mechanical)
+2. Apply sanitization (contextual, not mechanical) using the rules above
 3. Write the sanitized version to the same relative path in the target repo
 4. Create any needed directories
 
 ## Step 2: Generate `.example.md` Templates
 
-For each **Template** file **not on the skip list from Step 0.5**, read the original and generate a template version:
+For each **Template** file **not on the skip list from Step 0.5**, generate or update a template version:
 
 | Source (private) | Destination (target) |
 |-----------------|---------------------|
@@ -114,6 +154,17 @@ For each **Template** file **not on the skip list from Step 0.5**, read the orig
 | `profile/resume-preferences.md` | `profile/resume-preferences.example.md` |
 | `config/user.md` | `config/user.example.md` |
 | `config/search.md` | `config/search.example.md` |
+
+**Incremental mode** (manifest exists and `.example.md` exists in target repo):
+1. Read the file's diff from Step 0.6
+2. Read the current `.example.md` from the target repo
+3. Classify each change as **structural** or **personal content**:
+   - **Structural**: sections added/removed, new entry types, format patterns changed → apply to template automatically
+   - **Personal content**: the user's data changed but structure stayed the same → present to the user and ask if the template examples should be updated to reflect the new direction
+4. Apply structural changes. For personal content changes, present the list and let the user decide.
+5. Write the updated template (or skip if no changes needed)
+
+**Fresh generation** (full publish mode, OR template doesn't exist yet):
 
 **Template generation rules:**
 - Preserve all headings and structural format exactly
@@ -160,13 +211,20 @@ grep -ri "@g.us" "{TARGET_PATH}/" --include="*.md" --include="*.js" --include="*
 **If PII found:** Fix the files immediately, then re-run verification until clean.
 **If clean:** Report "PII check passed" and proceed to Step 6.
 
-## Step 6: Present Diff for Review
+## Step 6: Cross-Check and Present Diff for Review
 
 ```bash
 cd "{TARGET_PATH}" && git add -A && git diff --cached --stat
 ```
 
-Show the summary. If the diff is large, summarize changes by directory. Then ask: "Review the changes. Should I commit and push?"
+**Cross-check (incremental mode):** Before presenting to the user, verify that the public-side diff reflects the same intent as the private diffs collected in Step 0.6. For each changed file, confirm:
+- The public diff captures the equivalent change (accounting for sanitization)
+- No changes were accidentally dropped or misapplied
+- No unchanged parts of the public file were inadvertently modified
+
+If any discrepancy is found, fix it before presenting.
+
+**Present to user:** Show the summary. If the diff is large, summarize changes by directory. Then ask: "Review the changes. Should I commit and push?"
 
 For the first publish, also highlight the key sanitized files and ask the user to spot-check PII-sensitive ones (CLAUDE.md, customize-resume, job-fetcher, personal-note).
 

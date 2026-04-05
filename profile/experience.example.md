@@ -181,7 +181,21 @@ Advised on CI/CD pipeline design and cloud architecture for a Python-based compu
 
 ---
 
-### 4. Previous Role - Company
+### 4. Open Source Project - Role
+**Period**: Year – Present
+**Repo**: <!-- e.g., github.com/username/project-name -->
+
+<!-- Describe the project, what it does, and your role in building it. Include architecture decisions, technologies, and measurable impact. Example:
+Designed and built an open-source tool that automates [workflow]. Built a modular system of coordinating components. Applied [key techniques] to ensure quality results.
+-->
+
+**Technologies**: <!-- e.g., TypeScript, Node.js, Python, specific APIs/frameworks -->
+
+**Result**: <!-- Measurable outcomes — users, adoption, efficiency gains -->
+
+---
+
+### 5. Previous Role - Company
 **Period**: Years
 
 <!-- Shorter descriptions are fine for older roles. Example:
@@ -192,7 +206,7 @@ Advised on CI/CD pipeline design and cloud architecture for a Python-based compu
 
 ---
 
-### 5. Non-Tech Role With Transferable Skills
+### 6. Non-Tech Role With Transferable Skills
 **Location**: <!-- e.g., City, Country --> | **Period**: Year, Year
 
 <!-- Include non-tech roles if they demonstrate relevant skills. Example:
@@ -221,14 +235,6 @@ Advised on CI/CD pipeline design and cloud architecture for a Python-based compu
 - Cross-functional: works with developers, business owners, non-technical stakeholders
 - Results-oriented: all work tied to measurable outcomes
 - Initiative: proactively identifies and solves problems beyond original scope
--->
-
-**Strongest angles by role type**:
-<!-- How to frame your combined experience for different role types. Example:
-- **AI/Backend Dev**: Agentic AI systems, API tool-use, TypeScript backends, webhook architectures
-- **DevOps**: Docker deployment, cloud infrastructure, automated CI/CD, containerized services
-- **Full-stack**: End-to-end system delivery, API integrations, system architecture
-- **Startup/Generalist**: Business impact, wearing multiple hats, moving fast, sole developer
 -->
 
 ---

@@ -155,3 +155,5 @@ Only commit if there are actual new files. This ensures drafts are version-contr
 1. **Each resume represents a real person** — quality per draft matters more than processing speed. Take the time to iterate.
 2. **Autonomous means conservative, not careless** — Source of Truth Discipline and Autonomous Mode Guardrails apply to every draft.
 3. **Process every job in the input** — jobs were pre-filtered by scan-jobs; your role is drafting, not filtering. If something seems off about a job, note your concern in the WhatsApp message instead of skipping it.
+
+ultrathink

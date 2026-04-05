@@ -57,7 +57,7 @@ The user will be interviewed on everything in this resume. Every claim — skill
 
 **Skills and tools**: List only what's documented in the profile. Tool and product names are proper nouns — use the exact names the user actually uses. Proficiency levels in the profile are meaningful: "Basic Knowledge / Exposure" items stay off the highlights, and "roughly familiar with concepts" items stay off the resume entirely.
 
-**Experience bullets**: Describe what the user actually did, using the action-result format. Adapting language means using the JD's terminology for things the user genuinely did — not adding their requirements as if the user has them.
+**Experience bullets**: Describe what the user actually did *in that specific project*, using the action-result format. Each entry has its own truth — only mention technologies, tools, and outcomes that belong to that project. A skill the user has elsewhere doesn't belong in a bullet for a project that doesn't use it. Adapting language means using the JD's terminology for things the user genuinely did — not adding their requirements as if the user has them.
 
 **Metrics**: Use only metrics explicitly documented in the profile. When a metric isn't documented, leave it out rather than estimating.
 
@@ -242,3 +242,5 @@ Update to "Applied" once the user confirms submission.
 
 **Customizable section titles:**
 - `hobbiesTitle` — overrides the "Other Expertise / Hobbies" sidebar section title. Useful when the section contains non-hobby content (e.g., `"hobbiesTitle": "Other"` for entries like "Youth Movement Counselor"). Defaults to "Other Expertise / Hobbies" if omitted.
+
+ultrathink
