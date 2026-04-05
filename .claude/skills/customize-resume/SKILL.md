@@ -63,7 +63,7 @@ The user will be interviewed on everything in this resume. Every claim — skill
 
 **Dates**: Verify against the profile. Don't assume years from context.
 
-**Summary**: Write the user's elevator pitch, not a response to the job description. The test: would this summary make sense to someone who hasn't read the JD? If it only works as a reply to this specific posting — if it borrows the JD's buzzwords — rewrite it to describe the user in their own terms.
+**Summary**: See Step 4 for comprehensive summary guidance.
 
 When adapting language for ATS matching, the boundary is clear: rephrase what the user did using their vocabulary, but don't add what wasn't done. When unsure whether something is documented, check the profile rather than guessing — or flag it for the user's review.
 
@@ -78,11 +78,14 @@ When creating resumes without the user's real-time review (quick-apply, batch pr
 
 ## Step 3: Reorganize & Highlight
 
+**Align resume title and role titles with JD language:**
+- The resume title (top of page) should match or closely echo the JD's role title, as long as it's a viable way to frame the user based on their actual experience and skills. Usually it's just the JD title. In edge cases, combine titles to strengthen fit — e.g., if the JD asks for an AI developer with DevOps experience, "AI Developer / DevOps Engineer" is fair since both are true.
+- Experience role titles can be adjusted to better match the JD's terminology, as long as they remain accurate to what the user actually did in that role.
+
 **REORDER to match job priorities:**
 - Put most relevant skills/experience first
 - Match the order of requirements in the job posting
-- Experience should follow reverse chronological order (newest first) - recruiters expect this
-- BUT within the same time period (e.g., multiple "2025 – Present" roles), order by relevance to THIS job
+- Default to reverse chronological order (newest first). Only override chronology when there's a strong relevance advantage — e.g., a slightly older project that's a near-perfect match for the role. Otherwise, breaking chronological order is confusing for recruiters.
 - Skills section categories should reflect what the job emphasizes - remove or condense categories that aren't priorities for this role
 
 **Write bullet points that SHOW, don't TELL:**
@@ -91,6 +94,7 @@ When creating resumes without the user's real-time review (quick-apply, batch pr
 - Alternative: "Used [technologies] to [something you did], enabling [impact]"
 - Example BAD: "Strong product thinking and user-centric approach"
 - Example GOOD: "Identified pain points in business workflows and implemented solutions using digital tools, enabling 50% capacity growth"
+- Where relevant, lead with the business value or what the product does for users — not just the tech stack. Consider who's reading: what angles does *this role's* audience (hiring manager, team lead, recruiter) care about? A technical lead may appreciate architecture details; a business stakeholder cares about the problem solved.
 
 **Highlight keywords** using `<span class="highlight">`:
 - Only highlight terms explicitly mentioned in the job posting
@@ -103,13 +107,29 @@ When creating resumes without the user's real-time review (quick-apply, batch pr
 - Same meaning, different words (e.g., "container orchestration" <-> "Kubernetes management")
 - Helps with ATS matching
 
+**Review highlights holistically before finishing:**
+- Read the full resume and apply judgment: are the right terms highlighted for *this* JD? Highlights from a base resume may no longer be relevant — remove those. JD-relevant terms that appear in the resume but aren't highlighted should be added.
+- Apply highlights naturally. Highlighting partial words or odd fragments may hurt more than they help.
+
 ## Step 4: Customize Summary
 
-Tweak or rewrite the summary to best represent the user for this job:
-- Capture the recruiter's attention
-- Highlight uniqueness and strengths to stand out
-- Include key skills relevant to this role
-- Keep it as the user's "elevator speech"
+The summary is the user's elevator pitch — 3-4 sentences that make a recruiter want to keep reading.
+
+**Process:**
+1. Understand what the role *actually needs* — the "why behind the JD." What problem is this team solving? Who does this person work with? What would success look like?
+2. Infer the main qualities the recruiter is looking for.
+3. Identify the main fits between the user's profile and those qualities.
+4. Design a short elevator pitch that conveys: "I fit exactly what you're looking for" — and if it fits naturally, "here are additional things that make me unique."
+
+**The goal:** A compelling "business card" that sounds like a real person, not an AI-generated response to the JD. Include the main keywords of what they're looking for, but in the user's own language — genuine, not mirrored.
+
+**Writing rules:**
+- Write in the user's voice — direct, confident, concrete.
+- Ground claims in specifics (technologies, metrics, outcomes) woven in naturally, not listed.
+- Avoid employment-status labels ("as a freelancer", "as a contractor") — focus on what the user does and the impact they deliver.
+- Keep the message focused and engaging enough to make the recruiter keep reading. A specific detail or metric can be powerful when it serves the message — but don't drift into specifics that are better explained in the experience entries below. The summary's job is to make them want to get there.
+
+**Litmus test:** Would this summary make sense to someone who hasn't read the JD? If it only works as a reply to this specific posting, rewrite it.
 
 ## Step 5: Proofread & Polish
 
@@ -120,6 +140,8 @@ Before generating, read through ALL text in the resume JSON like an editor would
 - **Punctuation** - correct and consistent punctuation
 - **Readability** - text flows naturally, no awkward phrasings
 - **Accuracy** - text accurately represents what it claims (no misleading framings)
+- **Tone** - does the summary sound like a genuine person or like a keyword pitch?
+- **Redundancy** - repeating key information across sections is fine when it adds value in a different context. But if a detail is purely redundant, condense it to give space and focus to the rest of the text.
 
 Fix any issues found before proceeding. The resume text should be flawless.
 
